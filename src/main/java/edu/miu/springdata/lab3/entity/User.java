@@ -22,5 +22,11 @@ public class User {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @JsonManagedReference
-    private List<Product> products;
+    private List<Product> product;
+
+    @OneToOne
+    private Address address;
+
+//    @ManyToOne
+//    private List<Review> reviews;
 }

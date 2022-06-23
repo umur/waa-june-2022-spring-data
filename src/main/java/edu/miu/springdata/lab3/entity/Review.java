@@ -19,4 +19,6 @@ public class Review {
     @JsonBackReference
     private Product product;
 
+//    @ManyToOne
+//    private User user;
 }

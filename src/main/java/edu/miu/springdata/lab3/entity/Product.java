@@ -17,6 +17,9 @@ public class Product {
     private String name;
     private float price;
 
+    @ManyToOne
+    private Category category;
+
     //@OneToMany
     // UNCOMMENT FOR UNI-DIRECTIONAL JOIN COLUMN
     //@JoinColumn(name = "product_id")
@@ -24,14 +27,12 @@ public class Product {
     // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     @JsonManagedReference
-    private List<Review> reviews;
+    private List<Review> rating;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user")
     @JsonBackReference
     private User user;
 
-    @ManyToMany(mappedBy = "products")
-    private List<Category> categories;
 
 }
