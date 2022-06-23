@@ -1,4 +1,4 @@
-package edu.miu.springdata.lab3.entity;
+package edu.miu.springdata.lab3.entity.bidirectional;
 
 import lombok.Data;
 
@@ -6,9 +6,8 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="users")
 @Data
-public class User {
+public class UserBi {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -17,9 +16,9 @@ public class User {
     private String firstName;
     private String lastName;
 
-    @OneToMany(mappedBy = "user")
-    private List<Review> reviews;
+    @OneToMany(mappedBy = "userb")
+    private List<ReviewBi> reviewsb;
 
     @OneToOne
-    private Address address;
+    private AddressBi addressb;
 }

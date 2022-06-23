@@ -1,27 +1,20 @@
 package edu.miu.springdata.lab3.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import lombok.Data;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+import javax.persistence.*;
+
 @Entity
+@Table(name="address")
+@Data
 public class Address {
-
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
     private String street;
-    private int zip;
     private String city;
+    private String zip;
 
     @OneToOne
     private User user;
