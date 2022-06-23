@@ -1,8 +1,8 @@
 package edu.miu.springdata.lab3.services;
 
-import com.pprajapati.springdata1.domain.*;
-import edu.miu.springdata.lab3.domain.Product;
-import edu.miu.springdata.lab3.domain.Review;
+
+import edu.miu.springdata.lab3.entity.Product;
+import edu.miu.springdata.lab3.entity.Review;
 
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package edu.miu.springdata.lab3.services;
 
-import com.pprajapati.springdata1.domain.*;
-import edu.miu.springdata.lab3.domain.Category;
+import edu.miu.springdata.lab3.entity.Category;
 
 import java.util.List;
 

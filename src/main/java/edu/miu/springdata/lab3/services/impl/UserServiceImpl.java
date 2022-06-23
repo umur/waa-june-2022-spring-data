@@ -1,6 +1,6 @@
 package edu.miu.springdata.lab3.services.impl;
 
-import edu.miu.springdata.lab3.domain.User;
+import edu.miu.springdata.lab3.entity.User;
 import edu.miu.springdata.lab3.repositories.UserRepo;
 import edu.miu.springdata.lab3.services.UserService;
 import lombok.RequiredArgsConstructor;
