@@ -15,8 +15,8 @@ public class Review {
 
     private String comment;
 
-//    @ManyToOne
-//    private User user;
+    @ManyToOne
+    private User user;
 
     @JsonIgnoreProperties("reviews")
     @ManyToOne()
