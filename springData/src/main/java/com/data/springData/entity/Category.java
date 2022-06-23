@@ -11,4 +11,6 @@ public class Category {
 
     @OneToMany
     private List<Product> products;
+
+    private int code;
 }
