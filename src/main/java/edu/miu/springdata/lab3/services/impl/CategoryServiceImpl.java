@@ -1,6 +1,6 @@
 package edu.miu.springdata.lab3.services.impl;
 
-import edu.miu.springdata.lab3.domain.Category;
+import edu.miu.springdata.lab3.entity.Category;
 import edu.miu.springdata.lab3.repositories.CategoryRepo;
 import edu.miu.springdata.lab3.services.CategoryService;
 import lombok.RequiredArgsConstructor;
