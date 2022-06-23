@@ -1,16 +1,22 @@
 package edu.miu.springdata.lab3.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+import javax.persistence.*;
+
+@Entity
+@Data
 public class Review {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String comment;
+    private int numberOfStars;
+
+    @ManyToOne
+    @JsonBackReference
+    private Product product;
+
 }

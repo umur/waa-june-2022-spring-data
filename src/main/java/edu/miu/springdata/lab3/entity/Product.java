@@ -1,23 +1,37 @@
 package edu.miu.springdata.lab3.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
+@Data
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private double price;
-    private float rating;
+    private float price;
 
-    @OneToOne
-    private Category category;
+    //@OneToMany
+    // UNCOMMENT FOR UNI-DIRECTIONAL JOIN COLUMN
+    //@JoinColumn(name = "product_id")
+
+    // UNCOMMENT FOR BI-DIRECTIONAL JOIN COLUMN
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Review> reviews;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_user")
+    @JsonBackReference
+    private User user;
+
+    @ManyToMany(mappedBy = "products")
+    private List<Category> categories;
+
 }
