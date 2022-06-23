@@ -1,13 +1,13 @@
-package edu.miu.springdata.lab3.entity;
+package edu.miu.springdata.lab3.entity.unidirectional;
 
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Entity
-@Table(name="users")
 @Data
-public class User {
+@Entity
+public class UserUni {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -16,9 +16,13 @@ public class User {
     private String firstName;
     private String lastName;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<Review> reviews;
+
+
+    @OneToMany
+    @JoinColumn  // if we do not add this it will create mapper table
+    private List<ReviewUni> reviewsu;
 
     @OneToOne
-    private Address address;
+    private AddressUni addressu;
+
 }
