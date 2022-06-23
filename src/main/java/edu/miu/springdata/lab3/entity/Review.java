@@ -10,4 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Review {
+
+    private int id;
+    private String comment;
 }

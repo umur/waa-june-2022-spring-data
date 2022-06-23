@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Getter
@@ -16,5 +17,6 @@ public class Category {
     private int id;
     private String name;
 
+    @OneToMany
     private List<Product> products;
 }

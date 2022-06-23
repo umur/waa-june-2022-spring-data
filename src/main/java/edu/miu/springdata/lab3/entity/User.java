@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.List;
 
 @Getter
@@ -19,7 +21,9 @@ public class User {
     private String firstName;
     private String lastName;
 
+    @OneToMany
     private List<Review> reviews;
 
+    @OneToOne
     private Address address;
 }
