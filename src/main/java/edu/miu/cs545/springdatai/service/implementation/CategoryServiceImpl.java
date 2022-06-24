@@ -23,4 +23,14 @@ public class CategoryServiceImpl implements CategoryService {
     public List<CategoryDto> getAllCategories() {
         return categoryRepo.getAllCategories();
     }
+
+    @Override
+    public CategoryDto updateCategory(int id, CategoryDto categoryDto) {
+        return categoryRepo.updateCategory(id, categoryDto);
+    }
+
+    @Override
+    public CategoryDto deleteCategory(int id) {
+        return categoryRepo.deleteCategory(id);
+    }
 }

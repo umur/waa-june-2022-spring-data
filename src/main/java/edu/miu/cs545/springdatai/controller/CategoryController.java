@@ -23,6 +23,14 @@ public class CategoryController {
         return categoryService.getAllCategories();
     }
 
+    @PutMapping("/{id}")
+    public CategoryDto updateCategory(@PathVariable int id , @RequestBody CategoryDto categoryDto){
+        return categoryService.updateCategory(id, categoryDto);
+    }
 
+    @DeleteMapping("/{id}")
+    public CategoryDto deleteCategory(@PathVariable int id){
+        return categoryService.deleteCategory(id);
+    }
 
 }

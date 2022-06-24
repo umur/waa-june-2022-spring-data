@@ -17,4 +17,25 @@ public class ProductRepo {
     public List<ProductDto> getAllProducts() {
         return productDtos;
     }
+
+    public ProductDto updateProduct(int id, ProductDto productDto) {
+        for(ProductDto pd:productDtos){
+            if(pd.getId()==id){
+                productDtos.remove(pd);
+                productDtos.add(productDto);
+                return productDto;
+            }
+        }
+        return null;
+    }
+
+    public ProductDto deleteProduct(int id) {
+        for(ProductDto pd:productDtos){
+            if(pd.getId()==id){
+                productDtos.remove(pd);
+                return pd;
+            }
+        }
+        return null;
+    }
 }

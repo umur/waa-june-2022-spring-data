@@ -21,4 +21,14 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDto> getAllProducts() {
         return productRepo.getAllProducts();
     }
+
+    @Override
+    public ProductDto updateProduct(int id, ProductDto productDto) {
+        return productRepo.updateProduct(id, productDto);
+    }
+
+    @Override
+    public ProductDto deleteProduct(int id) {
+        return productRepo.deleteProduct(id);
+    }
 }

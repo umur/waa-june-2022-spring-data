@@ -8,4 +8,8 @@ public interface CategoryService {
     public CategoryDto createCategory(CategoryDto categoryDto);
 
     List<CategoryDto> getAllCategories();
+
+    CategoryDto updateCategory(int id, CategoryDto categoryDto);
+
+    CategoryDto deleteCategory(int id);
 }
