@@ -1,13 +1,10 @@
 package lab3.lab3.entity.user_address;
 
-import lab3.lab3.entity.Review;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "users")
-public class User_JT {
+@Table(name = "users_JT1")
+public class User_JT1 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

@@ -36,7 +36,9 @@ public class ReviewServiceImpl implements ReviewService{
 
     @Override
     public void updateReview(ReviewDTO reviewDto,int id) {
-        reviewRepo.save(modelMapper.map(reviewDto, Review.class));
+        Review review=modelMapper.map(reviewDto,Review.class);
+        review.setId(id);
+        reviewRepo.save(review);
     }
 
     @Override

@@ -13,5 +13,5 @@ public class Address_JC {
 
     @OneToOne
     @JoinColumn
-    User_JC user_jc;
+    User_JC1 user_jc;
 }
