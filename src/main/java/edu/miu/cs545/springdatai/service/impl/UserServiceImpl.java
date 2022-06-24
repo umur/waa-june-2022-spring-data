@@ -1,9 +1,11 @@
 package edu.miu.cs545.springdatai.service.impl;
 
+import edu.miu.cs545.springdatai.dto.ReviewDto;
 import edu.miu.cs545.springdatai.dto.UserDto;
 import edu.miu.cs545.springdatai.entity.Review;
-import edu.miu.cs545.springdatai.repository.UserRepository;
+import edu.miu.cs545.springdatai.repo.UserRepository;
 import edu.miu.cs545.springdatai.service.UserService;
+import edu.miu.cs545.springdatai.utils.ReviewUtils;
 import edu.miu.cs545.springdatai.utils.UserUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -42,5 +44,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserById(Integer id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public void createNewReview(int id, ReviewDto reviewDto) {
+        System.out.println(reviewDto);
+        userRepository.findById(id).get().addReviews(ReviewUtils.parseReviewDtoToReview(reviewDto));
     }
 }

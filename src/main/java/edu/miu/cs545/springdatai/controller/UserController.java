@@ -1,5 +1,6 @@
 package edu.miu.cs545.springdatai.controller;
 
+import edu.miu.cs545.springdatai.dto.ReviewDto;
 import edu.miu.cs545.springdatai.dto.UserDto;
 import edu.miu.cs545.springdatai.entity.Review;
 import edu.miu.cs545.springdatai.service.UserService;
@@ -21,6 +22,11 @@ public class UserController {
         return userService.createNewUser(userDto);
     }
 
+    @PostMapping("/{id}/review")
+    public void createNewReview(@PathVariable int id, @RequestBody ReviewDto reviewDto){
+        userService.createNewReview(id, reviewDto);
+    }
+
     @GetMapping
     public List<UserDto> getAllUsers(){
         return userService.getAllUsers();
@@ -32,8 +38,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}/reviews")
-    public List<Review> getReviewsByUserId(@PathVariable int id){
-        return (List<Review>) userService.getById(id);
+    public Object getReviewsByUserId(@PathVariable int id){
+        return (userService.getById(id));
     }
 
     @PutMapping("/{id}")

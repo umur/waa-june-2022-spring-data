@@ -1,6 +1,5 @@
-package edu.miu.cs545.springdatai.repository;
+package edu.miu.cs545.springdatai.repo;
 
-import edu.miu.cs545.springdatai.dto.UserDto;
 import edu.miu.cs545.springdatai.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
