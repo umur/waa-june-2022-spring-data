@@ -3,7 +3,7 @@ spring:
     name: lab-3-spring-data
   datasource:
     password: admin1234
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/Spring_db
     username: postgres
   jpa:
     hibernate:
