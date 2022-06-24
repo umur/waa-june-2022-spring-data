@@ -1,5 +1,8 @@
 package edu.miu.springdata.lab3.controllers;
 
+import edu.miu.springdata.lab3.dtos.CategoryDto;
+import edu.miu.springdata.lab3.dtos.ProductDto;
+import edu.miu.springdata.lab3.dtos.ReviewDto;
 import edu.miu.springdata.lab3.entity.Product;
 import edu.miu.springdata.lab3.entity.Review;
 import edu.miu.springdata.lab3.services.ProductService;
@@ -16,18 +19,24 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
-    public void save(@RequestBody Product p) {
-        productService.save(p);
+    public void save(@RequestBody ProductDto productDto) {
+        productService.save(productDto);
     }
 
     @GetMapping
-    public List<Product> getAll() {
+    public List<ProductDto> getAll() {
         return productService.getAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getById(@PathVariable int id) {
+    public ResponseEntity<ProductDto> getById(@PathVariable int id) {
         var product = productService.getById(id);
+        return ResponseEntity.ok(product);
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<ProductDto> update(@PathVariable int id, @RequestBody ProductDto productDto) {
+        var product = productService.update(id, productDto);
         return ResponseEntity.ok(product);
     }
 
@@ -36,17 +45,9 @@ public class ProductController {
         productService.delete(id);
     }
 
-    @GetMapping("/getreviewsbyproduct/{id}")
-    public List<Review> getReviewsByProductId(@PathVariable int id) {
+    @GetMapping("/{id}/reviews")
+    public List<ReviewDto> getReviewsByProductId(@PathVariable int id) {
         return productService.getReviewsFromProductId(id);
 
     }
-
-    @GetMapping("/getByName/{name}")
-    public List<Product> getByName(@PathVariable String name) {
-        System.out.println(name);
-        return productService.getByName(name);
-
-    }
-
 }
