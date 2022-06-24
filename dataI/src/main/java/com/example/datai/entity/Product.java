@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,5 +25,7 @@ public class Product {
     @JsonManagedReference
     @ManyToOne
     private Category category;
+    @OneToMany
+    private List<Review> reviews;
 
 }

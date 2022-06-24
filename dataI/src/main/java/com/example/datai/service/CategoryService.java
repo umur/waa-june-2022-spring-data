@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface CategoryService {
 
-    List<ProductDto> findAllCategoryLessThanMaxPrice(Category category, double maxPrice);
+    List<ProductDto> findAllCategoryLessThanMaxPrice(String category, double maxPrice);
 }

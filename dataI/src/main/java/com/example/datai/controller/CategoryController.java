@@ -18,8 +18,8 @@ public class CategoryController {
     @Autowired
     private CategoryServiceImpl  categoryService;
 
-    @GetMapping("/{cat}")
-    public List<ProductDto> findAllCategoriesLessThanMaxPrice(@RequestParam("cat") String cat, double maxPrice){
-        return null; //categoryService.findAllCategoryLessThanMaxPrice(cat, maxPrice);
+    @GetMapping("/{maxPrice}")
+    public List<ProductDto> findAllCategoriesLessThanMaxPrice( String cat, @RequestParam double maxPrice){
+        return  categoryService.findAllCategoryLessThanMaxPrice(cat, maxPrice);
     }
 }

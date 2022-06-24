@@ -1,6 +1,5 @@
 package com.example.datai.service.impl;
 
-import com.example.datai.dto.CategoryDto;
 import com.example.datai.dto.ProductDto;
 import com.example.datai.entity.Category;
 import com.example.datai.entity.Product;
@@ -24,12 +23,12 @@ public class CategoryServiceImpl implements CategoryService {
     private ModelMapper modelMapper;
 
     @Override
-    public List<ProductDto> findAllCategoryLessThanMaxPrice(Category category1, double maxPrice) {
+    public List<ProductDto> findAllCategoryLessThanMaxPrice(String category1, double maxPrice) {
 
         List<ProductDto> categories = new ArrayList<>();
 
         for(Category category : categoryRep.findAll()){
-            if(category.getName().equals(category1.getName())){
+            if(category.getName().equals(category1)){
                 for(Product cat : category.getProducts()){
                     if(cat.getPrice() < maxPrice) {
                         var dto = modelMapper.map(cat, ProductDto.class);
