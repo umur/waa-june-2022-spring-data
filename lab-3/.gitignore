@@ -17,7 +17,11 @@ target/
 .idea
 *.iws
 *.iml
+<<<<<<< HEAD
 *.ip
+=======
+*.ipr
+>>>>>>> cdc530596b93035b50b55dc1bf541d5491d5bdfe
 *.yml
 
 ### NetBeans ###

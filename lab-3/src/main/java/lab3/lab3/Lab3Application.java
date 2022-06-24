@@ -1,7 +1,9 @@
 package lab3.lab3;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Lab3Application {
@@ -10,4 +12,8 @@ public class Lab3Application {
         SpringApplication.run(Lab3Application.class, args);
     }
 
+    @Bean
+    public ModelMapper getModalMapper() {
+        return new ModelMapper();
+    }
 }
