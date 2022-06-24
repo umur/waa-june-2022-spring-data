@@ -1,22 +1,23 @@
 package edu.miu.springdata.lab3.services;
 
 
-import edu.miu.springdata.lab3.entity.Product;
-import edu.miu.springdata.lab3.entity.Review;
+import edu.miu.springdata.lab3.dtos.ProductDto;
+import edu.miu.springdata.lab3.dtos.ReviewDto;
 
 import java.util.List;
 
 public interface ProductService {
-    void save(Product p);
+    void save(ProductDto p);
 
     void delete(int id);
 
-    Product getById(int id);
+    void update(ProductDto productDto, int id);
+    ProductDto getById(int id);
 
-    List<Product> getAll();
+    List<ProductDto> getAll();
 
-    List<Product> getWithMinPrice();
-    List<Review> getReviewsFromProductId(int productId);
+    List<ProductDto> getWithMinPrice();
+    List<ReviewDto> getReviewsFromProductId(int productId);
 
-    List<Product> getByName(String name);
+    List<ProductDto> getByName(String name);
 }

@@ -1,5 +1,6 @@
 package edu.miu.springdata.lab3.controllers;
 
+import edu.miu.springdata.lab3.dtos.CategoryDto;
 import edu.miu.springdata.lab3.entity.Category;
 import edu.miu.springdata.lab3.services.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -15,17 +16,17 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @PostMapping
-    public void save(@RequestBody Category p) {
+    public void save(@RequestBody CategoryDto p) {
         categoryService.save(p);
     }
 
     @GetMapping
-    public List<Category> getAll() {
+    public List<CategoryDto> getAll() {
         return categoryService.getAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Category> getById(@PathVariable int id) {
+    public ResponseEntity<CategoryDto> getById(@PathVariable int id) {
         var product = categoryService.getById(id);
         return ResponseEntity.ok(product);
     }

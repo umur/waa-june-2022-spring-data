@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface AddressService {
 
-    List<AddressDto> getAddress();
+    List<AddressDto> getAll();
 
-    void updateAddress(AddressDto addressDto, int id);
+    void update(AddressDto addressDto, int id);
 
-    void addAddress(AddressDto addressDto);
+    void save(AddressDto addressDto);
 
-    void deleteAddress(int id);
+    void delete(int id);
 }

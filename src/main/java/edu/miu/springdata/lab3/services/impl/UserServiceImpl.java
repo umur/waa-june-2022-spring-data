@@ -1,9 +1,12 @@
 package edu.miu.springdata.lab3.services.impl;
 
+import edu.miu.springdata.lab3.dtos.UserDto;
 import edu.miu.springdata.lab3.entity.User;
 import edu.miu.springdata.lab3.repositories.UserRepo;
 import edu.miu.springdata.lab3.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,10 +17,15 @@ import java.util.stream.StreamSupport;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
+    @Autowired
     private final UserRepo userRepo;
+
+    @Autowired
+    private final ModelMapper modelMapper;
+
     @Override
-    public void save(User p) {
-        userRepo.save(p);
+    public void save(UserDto p) {
+        userRepo.save(modelMapper.map(p, User.class));
     }
 
     @Override
@@ -26,13 +34,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getById(int id) {
-        return (User) userRepo.findById(id).get();
+    public UserDto getById(int id) {
+        return modelMapper.map(userRepo.findById(id).get(), UserDto.class);
     }
 
     @Override
-    public List<User> getAll() {
+    public List<UserDto> getAll() {
         return StreamSupport.stream(userRepo.findAll().spliterator(), false)
+                .map(u -> modelMapper.map(u, UserDto.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void update(UserDto userDto, int id) {
+
     }
 }
