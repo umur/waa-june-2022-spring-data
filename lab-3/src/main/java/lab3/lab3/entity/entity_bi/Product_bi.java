@@ -8,6 +8,7 @@ public class Product_bi {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private double price;
+    private String name;
 
     @ManyToOne
     private Category_bi category;
