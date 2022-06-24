@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bi-mapping/bi-mapping.iml" filepath="$PROJECT_DIR$/bi-mapping/bi-mapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uni-mapping/uni-mapping.iml" filepath="$PROJECT_DIR$/uni-mapping/uni-mapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/waa-june-2022-spring-data-ashish.iml" filepath="$PROJECT_DIR$/.idea/waa-june-2022-spring-data-ashish.iml" />
+    </modules>
+  </component>
+</project>
