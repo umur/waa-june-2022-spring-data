@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class User {
     private String firstName;
     private String lastName;
     @OneToMany
+    @JoinColumn
     List<Review> reviews = new ArrayList<>();
     @OneToOne
     Address address;

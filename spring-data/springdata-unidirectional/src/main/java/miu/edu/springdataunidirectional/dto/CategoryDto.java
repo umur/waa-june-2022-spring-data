@@ -1,6 +1,6 @@
 package miu.edu.springdataunidirectional.dto;
 
-import miu.edu.springdata.model.Product;
+import miu.edu.springdataunidirectional.model.Product;
 
 import java.util.List;
 

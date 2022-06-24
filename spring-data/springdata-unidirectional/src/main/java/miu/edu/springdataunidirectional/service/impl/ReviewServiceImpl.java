@@ -1,9 +1,9 @@
 package miu.edu.springdataunidirectional.service.impl;
 
-import miu.edu.springdata.dto.ReviewDto;
-import miu.edu.springdata.model.Review;
-import miu.edu.springdata.repo.ReviewRepo;
-import miu.edu.springdata.service.ReviewService;
+import miu.edu.springdataunidirectional.dto.ReviewDto;
+import miu.edu.springdataunidirectional.model.Review;
+import miu.edu.springdataunidirectional.repo.ReviewRepo;
+import miu.edu.springdataunidirectional.service.ReviewService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

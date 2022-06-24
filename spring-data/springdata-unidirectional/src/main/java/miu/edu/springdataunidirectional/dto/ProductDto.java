@@ -1,6 +1,7 @@
 package miu.edu.springdataunidirectional.dto;
 
-import miu.edu.springdata.model.Category;
+
+import miu.edu.springdataunidirectional.model.Category;
 
 public class ProductDto {
 
@@ -8,6 +9,5 @@ public class ProductDto {
     private String name;
     private double price;
     private double rating;
-    private Category category;
 
 }

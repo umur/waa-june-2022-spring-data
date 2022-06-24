@@ -1,7 +1,6 @@
 package miu.edu.springdataunidirectional.controller;
-
-import miu.edu.springdata.dto.ReviewDto;
-import miu.edu.springdata.service.ReviewService;
+import miu.edu.springdataunidirectional.dto.ReviewDto;
+import miu.edu.springdataunidirectional.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

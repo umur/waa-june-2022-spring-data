@@ -1,5 +1,6 @@
 package miu.edu.springdata.controller;
 
+import miu.edu.springdata.dto.CategoryDto;
 import miu.edu.springdata.dto.ProductDto;
 import miu.edu.springdata.service.CategoryService;
 import miu.edu.springdata.service.ProductService;
@@ -34,5 +35,18 @@ public class ProductController {
         productService.delete(id);
     }
 
-//    @GetMapping("/findAllByPrice")
+    @GetMapping("/costMoreThan")
+    public List<ProductDto> findByMinPrice(@RequestParam double price) {
+        return productService.findAllByMinPrice(price);
+    }
+
+    @GetMapping("/findAllCategoriesAndPrice")
+    public List<ProductDto> findAllCategoriesNPrice(@RequestParam CategoryDto categoryDto, @RequestParam double price) {
+        return productService.findAllByCategoryAndPrice(categoryDto, price);
+    }
+
+    @GetMapping("/findByName")
+    public List<ProductDto> findAllByName(@RequestParam String name) {
+        return productService.findAllByNameContains(name);
+    }
 }

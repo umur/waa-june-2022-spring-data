@@ -1,7 +1,8 @@
 package miu.edu.springdataunidirectional.controller;
 
-import miu.edu.springdata.dto.ProductDto;
-import miu.edu.springdata.service.ProductService;
+import miu.edu.springdataunidirectional.dto.CategoryDto;
+import miu.edu.springdataunidirectional.dto.ProductDto;
+import miu.edu.springdataunidirectional.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,5 +34,18 @@ public class ProductController {
         productService.delete(id);
     }
 
-//    @GetMapping("/findAllByPrice")
+    @GetMapping("/costMoreThan")
+    public List<ProductDto> findByMinPrice(@RequestParam double price) {
+        return productService.findAllByMinPrice(price);
+    }
+
+//    @GetMapping("/findAllCategoriesAndPrice")
+//    public List<ProductDto> findAllCategoriesNPrice(@RequestParam CategoryDto categoryDto, @RequestParam double price) {
+//        return productService.findAllByCategoryAndPrice(categoryDto, price);
+//    }
+
+    @GetMapping("/findByName")
+    public List<ProductDto> findAllByName(@RequestParam String name) {
+        return productService.findAllByNameContains(name);
+    }
 }

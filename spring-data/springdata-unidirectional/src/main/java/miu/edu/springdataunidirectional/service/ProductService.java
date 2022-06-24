@@ -1,7 +1,8 @@
 package miu.edu.springdataunidirectional.service;
 
-import miu.edu.springdata.dto.CategoryDto;
-import miu.edu.springdata.dto.ProductDto;
+
+import miu.edu.springdataunidirectional.dto.CategoryDto;
+import miu.edu.springdataunidirectional.dto.ProductDto;
 
 import java.util.List;
 
@@ -12,6 +13,6 @@ public interface ProductService {
     void delete(int id);
 
     List<ProductDto> findAllByMinPrice(double price);
-    List<ProductDto> findAllByCategoryAndPrice(CategoryDto category, double price);
+//    List<ProductDto> findAllByCategoryAndPrice(CategoryDto category, double price);
     List<ProductDto> findAllByNameContains(String name);
 }

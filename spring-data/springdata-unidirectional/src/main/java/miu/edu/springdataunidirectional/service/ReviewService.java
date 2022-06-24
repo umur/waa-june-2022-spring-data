@@ -1,6 +1,7 @@
 package miu.edu.springdataunidirectional.service;
 
-import miu.edu.springdata.dto.ReviewDto;
+
+import miu.edu.springdataunidirectional.dto.ReviewDto;
 
 import java.util.List;
 

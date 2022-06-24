@@ -1,9 +1,9 @@
 package miu.edu.springdataunidirectional.service.impl;
 
-import miu.edu.springdata.dto.UserDto;
-import miu.edu.springdata.model.User;
-import miu.edu.springdata.repo.UserRepo;
-import miu.edu.springdata.service.UserService;
+import miu.edu.springdataunidirectional.dto.UserDto;
+import miu.edu.springdataunidirectional.model.User;
+import miu.edu.springdataunidirectional.repo.UserRepo;
+import miu.edu.springdataunidirectional.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

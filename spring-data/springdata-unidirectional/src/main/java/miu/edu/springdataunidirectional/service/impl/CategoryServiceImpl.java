@@ -1,9 +1,9 @@
 package miu.edu.springdataunidirectional.service.impl;
 
-import miu.edu.springdata.dto.CategoryDto;
-import miu.edu.springdata.model.Category;
-import miu.edu.springdata.repo.CategoryRepo;
-import miu.edu.springdata.service.CategoryService;
+import miu.edu.springdataunidirectional.dto.CategoryDto;
+import miu.edu.springdataunidirectional.model.Category;
+import miu.edu.springdataunidirectional.repo.CategoryRepo;
+import miu.edu.springdataunidirectional.service.CategoryService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

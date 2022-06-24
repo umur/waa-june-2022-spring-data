@@ -1,7 +1,7 @@
 package miu.edu.springdataunidirectional.controller;
 
-import miu.edu.springdata.dto.AddressDto;
-import miu.edu.springdata.service.AddressService;
+import miu.edu.springdataunidirectional.dto.AddressDto;
+import miu.edu.springdataunidirectional.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

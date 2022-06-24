@@ -1,5 +1,7 @@
 package miu.edu.springdataunidirectional.model;
 
+import javax.persistence.*;
+
 @Entity
 public class Product {
     @Id
@@ -8,6 +10,4 @@ public class Product {
     private String name;
     private double price;
     private double rating;
-    @OneToOne
-    private Category category;
-}""
+}

@@ -1,7 +1,7 @@
 package miu.edu.springdataunidirectional.controller;
 
-import miu.edu.springdata.dto.UserDto;
-import miu.edu.springdata.service.UserService;
+import miu.edu.springdataunidirectional.dto.UserDto;
+import miu.edu.springdataunidirectional.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

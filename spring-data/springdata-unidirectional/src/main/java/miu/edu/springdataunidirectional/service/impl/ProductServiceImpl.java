@@ -1,11 +1,11 @@
 package miu.edu.springdataunidirectional.service.impl;
 
-import miu.edu.springdata.dto.CategoryDto;
-import miu.edu.springdata.dto.ProductDto;
-import miu.edu.springdata.model.Category;
-import miu.edu.springdata.model.Product;
-import miu.edu.springdata.repo.ProductRepo;
-import miu.edu.springdata.service.ProductService;
+import miu.edu.springdataunidirectional.dto.CategoryDto;
+import miu.edu.springdataunidirectional.dto.ProductDto;
+import miu.edu.springdataunidirectional.model.Category;
+import miu.edu.springdataunidirectional.model.Product;
+import miu.edu.springdataunidirectional.repo.ProductRepo;
+import miu.edu.springdataunidirectional.service.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,11 +53,11 @@ public class ProductServiceImpl implements ProductService {
         return products.stream().map(p -> modelMapper.map(p, ProductDto.class)).collect(Collectors.toList());
     }
 
-    @Override
-    public List<ProductDto> findAllByCategoryAndPrice(CategoryDto category, double price) {
-        List<Product> products = productRepo.findAllByCategoryAndPriceBefore(modelMapper.map(category, Category.class), price);
-        return products.stream().map(p -> modelMapper.map(p, ProductDto.class)).collect(Collectors.toList());
-    }
+//    @Override
+//    public List<ProductDto> findAllByCategoryAndPrice(CategoryDto category, double price) {
+//        List<Product> products = productRepo.findAllByCategoryAndPriceBefore(modelMapper.map(category, Category.class), price);
+//        return products.stream().map(p -> modelMapper.map(p, ProductDto.class)).collect(Collectors.toList());
+//    }
 
     @Override
     public List<ProductDto> findAllByNameContains(String name) {

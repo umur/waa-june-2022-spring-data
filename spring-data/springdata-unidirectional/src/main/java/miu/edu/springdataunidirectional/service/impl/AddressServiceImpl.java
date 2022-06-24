@@ -1,9 +1,9 @@
 package miu.edu.springdataunidirectional.service.impl;
 
-import miu.edu.springdata.dto.AddressDto;
-import miu.edu.springdata.model.Address;
-import miu.edu.springdata.repo.AddressRepo;
-import miu.edu.springdata.service.AddressService;
+import miu.edu.springdataunidirectional.dto.AddressDto;
+import miu.edu.springdataunidirectional.model.Address;
+import miu.edu.springdataunidirectional.repo.AddressRepo;
+import miu.edu.springdataunidirectional.service.AddressService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

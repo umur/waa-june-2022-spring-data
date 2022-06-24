@@ -12,4 +12,4 @@ public class Product {
     private double rating;
     @OneToOne
     private Category category;
-}""
+}

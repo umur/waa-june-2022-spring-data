@@ -1,6 +1,7 @@
 package miu.edu.springdataunidirectional.service;
 
-import miu.edu.springdata.dto.UserDto;
+
+import miu.edu.springdataunidirectional.dto.UserDto;
 
 import java.util.List;
 

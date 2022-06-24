@@ -11,7 +11,4 @@ public class Review {
     @GeneratedValue
     private int id;
     private String comment;
-
-    @OneToOne
-    private User user;
 }

@@ -1,5 +1,7 @@
 package miu.edu.springdataunidirectional.model;
 
+import javax.persistence.*;
+
 @Entity
 public class Address {
     @Id
@@ -8,6 +10,4 @@ public class Address {
     private String street;
     private int zip;
     private String City;
-    @OneToOne
-    private User user;
 }

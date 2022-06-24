@@ -1,7 +1,8 @@
 package miu.edu.springdataunidirectional.dto;
 
-import miu.edu.springdata.model.Address;
-import miu.edu.springdata.model.Review;
+
+import miu.edu.springdataunidirectional.model.Address;
+import miu.edu.springdataunidirectional.model.Review;
 
 import java.util.ArrayList;
 import java.util.List;

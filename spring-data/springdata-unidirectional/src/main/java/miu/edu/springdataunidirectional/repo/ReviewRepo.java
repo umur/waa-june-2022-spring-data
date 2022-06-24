@@ -1,6 +1,6 @@
 package miu.edu.springdataunidirectional.repo;
 
-import miu.edu.springdata.model.Review;
+import miu.edu.springdataunidirectional.model.Review;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
