@@ -5,16 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    //private String name;
     private double price;
-    //private String rating;
-
-//    @OneToOne(mappedBy="products")
-//    private Category category;
-    @ManyToOne
-    private Category category;
-
-
 }

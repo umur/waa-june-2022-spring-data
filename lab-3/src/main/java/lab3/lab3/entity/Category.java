@@ -10,8 +10,6 @@ public class Category {
     private int id;
     private String name;
     @OneToMany
-    //@JoinTable
+    @JoinColumn
     private List<Product> products;
-//    @OneToOne
-//    private Product products;
 }

@@ -15,9 +15,11 @@ public class User {
 
     //@JsonManagedReference
     @OneToMany
+    @JoinColumn
     private List<Review> reviews;
 
     @OneToOne
+    @JoinColumn
     private Address address;
 
 }
