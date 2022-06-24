@@ -1,10 +1,14 @@
 package edu.miu.springdata.lab3.services.impl;
 
+<<<<<<< HEAD
 import edu.miu.springdata.lab3.dtos.ReviewDto;
 import edu.miu.springdata.lab3.dtos.UserDto;
 import edu.miu.springdata.lab3.entity.Review;
+=======
+>>>>>>> origin
 import edu.miu.springdata.lab3.entity.User;
 import edu.miu.springdata.lab3.repositories.ReviewRepo;
+import edu.miu.springdata.lab3.repositories.UserRepo;
 import edu.miu.springdata.lab3.services.ReviewService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -19,8 +23,8 @@ import java.util.stream.StreamSupport;
 @AllArgsConstructor
 public class ReviewServiceImpl implements ReviewService {
 
-    @Autowired
     private final ReviewRepo reviewRepo;
+<<<<<<< HEAD
 
     @Autowired
     private final ModelMapper modelMapper;
@@ -41,10 +45,29 @@ public class ReviewServiceImpl implements ReviewService {
     public void create(ReviewDto reviewDto) {
         reviewRepo.save(modelMapper.map(reviewDto, Review.class));
 
+=======
+    @Override
+    public void save(User p) {
+        reviewRepo.save(p);
+>>>>>>> origin
     }
 
     @Override
     public void delete(int id) {
         reviewRepo.deleteById(id);
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public User getById(int id) {
+        return (User) reviewRepo.findById(id).get();
+    }
+
+    @Override
+    public List<User> getAll() {
+        return StreamSupport.stream(reviewRepo.findAll().spliterator(), false)
+                .collect(Collectors.toList());
+    }
+>>>>>>> origin
 }
