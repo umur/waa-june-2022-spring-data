@@ -1,4 +1,4 @@
-package com.data.springData.entity;
+package com.data.springData.entity.biDirectional;
 
 import javax.persistence.*;
 import java.util.List;

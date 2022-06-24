@@ -1,8 +1,9 @@
-package com.data.springData.entity;
+package com.data.springData.entity.uniDirectional;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "ProductBi")
+@Table(name = "ProductBi")
 public class Product {
     @Id
     @GeneratedValue
@@ -10,6 +11,4 @@ public class Product {
     private String name;
     private double price;
     private float rating;
-    @ManyToOne
-    private Category category;
 }

@@ -1,6 +1,6 @@
 package com.data.springData.dto;
 
-import com.data.springData.entity.Product;
+import com.data.springData.entity.uniDirectional.Product;
 
 import java.util.List;
 
