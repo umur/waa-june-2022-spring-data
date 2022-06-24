@@ -1,4 +1,4 @@
-package miu.edu.springdata.service;
+package miu.edu.springdataunidirectional.service;
 
 import miu.edu.springdata.dto.CategoryDto;
 import miu.edu.springdata.dto.ProductDto;

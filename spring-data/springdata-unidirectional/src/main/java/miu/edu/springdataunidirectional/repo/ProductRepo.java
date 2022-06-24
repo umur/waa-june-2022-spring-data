@@ -1,4 +1,4 @@
-package miu.edu.springdata.repo;
+package miu.edu.springdataunidirectional.repo;
 
 import miu.edu.springdata.model.Category;
 import miu.edu.springdata.model.Product;

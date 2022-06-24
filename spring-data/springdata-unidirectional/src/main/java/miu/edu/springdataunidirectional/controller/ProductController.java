@@ -1,7 +1,6 @@
-package miu.edu.springdata.controller;
+package miu.edu.springdataunidirectional.controller;
 
 import miu.edu.springdata.dto.ProductDto;
-import miu.edu.springdata.service.CategoryService;
 import miu.edu.springdata.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
