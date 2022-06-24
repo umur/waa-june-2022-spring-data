@@ -34,7 +34,7 @@ public class ReviewController {
 
     @PostMapping("/{id}")
     public ResponseEntity<ReviewDto> update(@PathVariable int id, @RequestBody ReviewDto reviewDto) {
-        var review = reviewService.update(id, reviewDto);
+        var review = reviewService.update( reviewDto, id);
         return ResponseEntity.ok(review);
     }
 

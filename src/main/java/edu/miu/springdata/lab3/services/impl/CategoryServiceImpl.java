@@ -46,7 +46,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void update(CategoryDto categoryDto, int id) {
-        return;
+    public CategoryDto update(CategoryDto categoryDto, int id) {
+        return new CategoryDto();
     }
 }

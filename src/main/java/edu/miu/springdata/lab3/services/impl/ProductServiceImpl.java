@@ -39,8 +39,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void update(ProductDto productDto, int id) {
-        return;
+    public ProductDto update(ProductDto productDto, int id) {
+        return new ProductDto();
     }
 
     @Override

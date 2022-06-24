@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update(UserDto userDto, int id) {
-
+    public UserDto update(UserDto userDto, int id) {
+        return new UserDto();
     }
 }

@@ -13,5 +13,5 @@ public interface CategoryService {
 
     List<CategoryDto> getAll();
 
-    void update(CategoryDto categoryDto, int id);
+    CategoryDto update(CategoryDto categoryDto, int id);
 }

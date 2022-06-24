@@ -34,7 +34,7 @@ public class UserController {
 
     @PostMapping("/{id}")
     public ResponseEntity<UserDto> update(@PathVariable int id, @RequestBody UserDto userDto) {
-        var user = userService.update(id, userDto);
+        var user = userService.update( userDto, id);
         return ResponseEntity.ok(user);
     }
 

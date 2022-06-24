@@ -36,7 +36,7 @@ public class ProductController {
 
     @PostMapping("/{id}")
     public ResponseEntity<ProductDto> update(@PathVariable int id, @RequestBody ProductDto productDto) {
-        var product = productService.update(id, productDto);
+        var product = productService.update(productDto, id);
         return ResponseEntity.ok(product);
     }
 

@@ -37,7 +37,7 @@ public class CategoryController {
 
     @PostMapping("/{id}")
     public ResponseEntity<CategoryDto> update(@PathVariable int id, @RequestBody CategoryDto categoryDto) {
-        var category = categoryService.update(id, categoryDto);
+        var category = categoryService.update(categoryDto, id);
         return ResponseEntity.ok(category);
     }
 

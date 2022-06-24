@@ -1,6 +1,8 @@
 package edu.miu.springdata.lab3.services.impl;
 
 import edu.miu.springdata.lab3.dtos.ReviewDto;
+import edu.miu.springdata.lab3.dtos.UserDto;
+import edu.miu.springdata.lab3.entity.Review;
 import edu.miu.springdata.lab3.entity.User;
 import edu.miu.springdata.lab3.repositories.ReviewRepo;
 import edu.miu.springdata.lab3.repositories.UserRepo;
@@ -31,14 +33,13 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public void update(ReviewDto reviewDto, int id) {
-        return;
+    public ReviewDto update(ReviewDto reviewDto, int id) {
+        return new ReviewDto();
     }
-
 
     @Override
     public void save(ReviewDto p) {
-        reviewRepo.save(p);
+        reviewRepo.save(modelMapper.map(p, Review.class));
 
     }
 
@@ -49,13 +50,8 @@ public class ReviewServiceImpl implements ReviewService {
 
 
     @Override
-    public User getById(int id) {
-        return (User) reviewRepo.findById(id).get();
+    public ReviewDto getById(int id) {
+        return modelMapper.map(reviewRepo.findById(id).get(), ReviewDto.class);
     }
 
-    @Override
-    public List<User> getAll() {
-        return StreamSupport.stream(reviewRepo.findAll().spliterator(), false)
-                .collect(Collectors.toList());
-    }
 }

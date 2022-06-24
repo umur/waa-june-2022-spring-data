@@ -13,5 +13,5 @@ public interface UserService {
 
     List<UserDto> getAll();
 
-    void update(UserDto userDto, int id);
+    UserDto update(UserDto userDto, int id);
 }
