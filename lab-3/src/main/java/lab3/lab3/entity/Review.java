@@ -13,6 +13,6 @@ public class Review {
     private String comment;
 
     //@JsonBackReference
-    @OneToOne
-    private User user;
+//    @OneToOne
+//    private User user;
 }
