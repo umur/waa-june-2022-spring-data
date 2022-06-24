@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    password: ${SPRINGDATASOURCEPASSWORD:robeilaregawi}
+    username: ${SPRINGDATASOURCEUSERNAME:root}
+    url: ${SPRINGDATASOURCEURL:jdbc:mysql://localhost:3306/spring_data}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximumPoolSize: 10
+
+  jpa:
+    defer-datasource-initialization=true:
+        defer-datasource-initialization=true:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  main:
+    banner-mode: off
+
+debug: false
+server:
+  port: 8080
