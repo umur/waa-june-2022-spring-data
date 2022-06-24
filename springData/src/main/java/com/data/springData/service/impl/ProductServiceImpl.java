@@ -50,6 +50,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getProducts() {
+        List<Product> pro = productRepo.findAll();
+        for(Product pr: pro)
+        {
+
+        }
         return null;
     }
 }
