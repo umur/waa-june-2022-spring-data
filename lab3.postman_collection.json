@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "9ab0e941-a52b-49a3-bc29-bb63bfc4d701",
+		"name": "lab3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/users/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "getUsers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"alisher@miu.edu\",\r\n        \"firstname\": \"alisher\",\r\n        \"lastname\": \"abdullaev\",\r\n        \"address\": null,\r\n        \"products\": [\r\n            {\r\n                \"name\": \"a52\",\r\n                \"price\": 1200.0,\r\n                \"rating\": 10.0,\r\n                \"reviews\": [\r\n                    {\r\n                        \"comment\": \"best phone\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"reviews\": [\r\n            {\r\n                \"comment\": \"best phone\"\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "addUser"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"alisher@miu.edu\",\r\n        \"firstname\": \"alisher222\",\r\n        \"lastname\": \"abdullaev\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				},
+				"description": "updateUser"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/products/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						""
+					]
+				},
+				"description": "getProducts"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/products/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"iPad2\",\r\n    \"price\": 909.0,\r\n    \"rating\": 10.0,\r\n    \"reviews\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"comment\": \"awesome phoneeeeeee\"\r\n                    },\r\n                    {\r\n                        \"id\": 2,\r\n                        \"comment\": \"amazing phoneeeeeeeeeeeeeee\"\r\n                    },\r\n                    {\r\n                        \"id\": 3,\r\n                        \"comment\": \"awesome tablet\"\r\n                    }\r\n                ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1"
+					]
+				},
+				"description": "updateProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/products/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"a51\",\r\n    \"price\": 200.0,\r\n    \"rating\": 10.0,\r\n    \"reviews\": [\r\n                    {\r\n                        \"comment\": \"good phone\"\r\n                    }\r\n                ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						""
+					]
+				},
+				"description": "addProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/products/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1"
+					]
+				},
+				"description": "deleteProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"products"
+					]
+				},
+				"description": "Find all products created by the user with id =id."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/products/1/reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/1/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1",
+						"reviews"
+					]
+				},
+				"description": "getProductReviews"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"7"
+					]
+				},
+				"description": "deleteUser"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/categories/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "getCategories"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/categories/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Cat2\",\r\n        \"products\": [\r\n            {\r\n                \"name\": \"Pencil\",\r\n                \"price\": 5.0,\r\n                \"rating\": 10.0,\r\n                \"reviews\": []\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categories",
+						""
+					]
+				},
+				"description": "addcategory"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/categories/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Cat22\",\r\n        \"products\": [\r\n            {\r\n                \"name\": \"Pencil\",\r\n                \"price\": 5.0,\r\n                \"rating\": 10.0,\r\n                \"reviews\": []\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categories",
+						"1"
+					]
+				},
+				"description": "updateCategory"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/categories/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categories/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categories",
+						"2"
+					]
+				},
+				"description": "deleteCategory"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/addresses/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"street\": \"4 North\",\r\n        \"zip\": \"55555\",\r\n        \"city\": \"ottumwa\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addresses/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addresses",
+						""
+					]
+				},
+				"description": "addAddress"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/addresses/2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"street\": \"4 North\",\r\n        \"zip\": \"55555\",\r\n        \"city\": \"ottumwa\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addresses/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addresses",
+						"2"
+					]
+				},
+				"description": "updateAddress"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/addresses/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/addresses/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addresses",
+						"2"
+					]
+				},
+				"description": "deleteAddress"
+			},
+			"response": []
+		}
+	]
+}
