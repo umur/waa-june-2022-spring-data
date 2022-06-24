@@ -1,34 +1,77 @@
 package edu.miu.cs545.springdatai.service.implementation;
 
 import edu.miu.cs545.springdatai.dto.ProductDto;
+import edu.miu.cs545.springdatai.entity.Product;
+import edu.miu.cs545.springdatai.repo.CategoryRepo;
 import edu.miu.cs545.springdatai.repo.ProductRepo;
 import edu.miu.cs545.springdatai.service.ProductService;
+import edu.miu.cs545.springdatai.utils.ProductUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepo productRepo;
+    private final CategoryRepo categoryRepo;
+
+
     @Override
-    public ProductDto createProduct(ProductDto productDto) {
-        return productRepo.createProduct(productDto);
+    public List<ProductDto> findProductByMinPrice(int minPrice) {
+
+        var dataList = productRepo.findAll();
+        List<ProductDto> productDtoList = new ArrayList<>();
+        for (Product product : dataList) {
+            if (product.getPrice() > minPrice) {
+                var rs = ProductUtils.parseProductToProductDto(product);
+                productDtoList.add(rs);
+            }
+        }
+        return productDtoList;
     }
 
     @Override
-    public List<ProductDto> getAllProducts() {
-        return productRepo.getAllProducts();
+    public List<ProductDto> findProductByCatAndPrice(int maxPrice, int id) {
+        List<ProductDto> productDtoList = new ArrayList<>();
+        var category = categoryRepo.findById(id);
+        List<Product> products = category.getProducts();
+        for (Product product : products) {
+            if (product.getPrice() < maxPrice) {
+                var rs = ProductUtils.parseProductToProductDto(product);
+                productDtoList.add(rs);
+            }
+        }
+        return productDtoList;
     }
 
     @Override
-    public ProductDto updateProduct(int id, ProductDto productDto) {
-        return productRepo.updateProduct(id, productDto);
+    public List<ProductDto> findProductByName(String name) {
+
+        var dataList = productRepo.findAll();
+        List<ProductDto> productDtoList = new ArrayList<>();
+        for (Product product : dataList) {
+            if (product.getName().contains(name)) {
+                var rs = ProductUtils.parseProductToProductDto(product);
+                productDtoList.add(rs);
+            }
+        }
+        return productDtoList;
     }
 
     @Override
-    public ProductDto deleteProduct(int id) {
-        return productRepo.deleteProduct(id);
+    public List<ProductDto> findProductByUserId(int userId) {
+        var dataList = productRepo.findAll();
+        List<ProductDto> productDtoList = new ArrayList<>();
+        for (Product product : dataList) {
+            if (product.getUser().getId() == userId) {
+                var rs = ProductUtils.parseProductToProductDto(product);
+                productDtoList.add(rs);
+            }
+        }
+        return productDtoList;
     }
+
 }
