@@ -17,8 +17,8 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
-//    @GetMapping(path = "{/id}")
-//    public List<ProductDto> findAllProductCreatedByUser(@PathVariable("id") int id){
-//        return userService.findAllProductByCreatedByUser(id);
-//    }
+    @GetMapping(path = "{/id}")
+    public List<ProductDto> findAllProductCreatedByUser(@PathVariable("id") int id){
+        return userService.findAllProductByCreatedByUser(id);
+    }
 }

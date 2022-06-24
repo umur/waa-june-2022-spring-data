@@ -20,7 +20,7 @@ public class Category {
     private  String name;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "category")
+    @OneToMany //(mappedBy = "category")
     private List<Product> products;
 
 }

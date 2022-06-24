@@ -24,7 +24,7 @@ public class User {
     private String firstName;
     private String lastName;
 
-    @OneToMany (fetch = FetchType.LAZY, mappedBy = "user") //----
+    @OneToMany //(fetch = FetchType.LAZY, mappedBy = "user") //----
     @JsonManagedReference // ---
     private List<Review> reviews;
 
