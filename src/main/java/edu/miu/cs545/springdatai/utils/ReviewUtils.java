@@ -3,9 +3,13 @@ package edu.miu.cs545.springdatai.utils;
 import edu.miu.cs545.springdatai.dto.ReviewDto;
 import edu.miu.cs545.springdatai.entity.Review;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ReviewUtils {
-    private static final ModelMapper mapper = new ModelMapper();
+    @Autowired
+    private static ModelMapper mapper;
 
     public static ReviewDto parseReviewToReviewDto(Review review){
         return mapper.map(review, ReviewDto.class);

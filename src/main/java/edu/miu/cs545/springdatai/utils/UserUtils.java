@@ -3,9 +3,13 @@ package edu.miu.cs545.springdatai.utils;
 import edu.miu.cs545.springdatai.dto.UserDto;
 import edu.miu.cs545.springdatai.entity.User;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserUtils {
-    private static final ModelMapper mapper = new ModelMapper();
+    @Autowired
+    private static ModelMapper mapper;
 
     public static UserDto parseUserToUserDto(User user){
         return mapper.map(user, UserDto.class);
