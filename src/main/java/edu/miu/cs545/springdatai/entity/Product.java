@@ -1,8 +1,12 @@
 package edu.miu.cs545.springdatai.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Data
 @Entity
 public class Product {
@@ -22,4 +26,17 @@ public class Product {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    @JsonBackReference
+    private User user;
+
+    @ManyToOne
+    @JsonBackReference
+    private Category category;
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Review> reviews;
 }
