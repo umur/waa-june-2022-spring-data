@@ -4,9 +4,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String email;
     private String password;
@@ -19,7 +20,6 @@ public class User {
     private List<Review> reviews;
 
     @OneToOne
-    @JoinColumn
     private Address address;
 
 }
