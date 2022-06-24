@@ -18,5 +18,5 @@ public class Review {
     private String comment;
 
     @ManyToOne
-    private User users;
+    private User userId;
 }

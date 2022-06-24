@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,7 +22,14 @@ public class User {
     private String lastName;
     @Embedded
     private Address address;
-    @OneToMany(mappedBy = "users")
-    private List<Review> reviews;
+    @OneToMany(mappedBy = "userId")
+    private List<Review> reviews = new ArrayList<>();
+
+    public void addReviews(Review review){
+        Review addedReview = new Review();
+        addedReview=review;
+
+        reviews.add(addedReview);
+    }
 
 }
