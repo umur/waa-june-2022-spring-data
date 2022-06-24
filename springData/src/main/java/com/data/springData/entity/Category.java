@@ -8,7 +8,6 @@ public class Category {
     @Id @GeneratedValue
     private int id;
     private int name;
-
     @OneToMany
     private List<Product> products;
 
