@@ -11,12 +11,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category {
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
+    private String comment;
 
-    @OneToMany(mappedBy="categories")
-    private List<Product> products;
+    @ManyToOne
+    private User users;
 }
