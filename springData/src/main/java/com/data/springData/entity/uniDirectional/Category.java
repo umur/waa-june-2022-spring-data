@@ -1,9 +1,10 @@
-package com.data.springData.entity;
+package com.data.springData.entity.uniDirectional;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "CategoryBi")
+@Table(name = "CategoryBi")
 public class Category {
     @Id @GeneratedValue
     private int id;
