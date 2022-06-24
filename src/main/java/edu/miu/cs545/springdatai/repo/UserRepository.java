@@ -7,6 +7,5 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-    @Query("Select * from user u where firstName='r'")
-    List<User> getAllUsersbyR();
+
 }

@@ -8,8 +8,6 @@ import edu.miu.cs545.springdatai.service.UserService;
 import edu.miu.cs545.springdatai.utils.ReviewUtils;
 import edu.miu.cs545.springdatai.utils.UserUtils;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
