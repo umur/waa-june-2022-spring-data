@@ -2,7 +2,7 @@ spring:
   application:
     name: lab-3-spring-data
   datasource:
-    password: apple
+    password: admin1234
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
   jpa:
