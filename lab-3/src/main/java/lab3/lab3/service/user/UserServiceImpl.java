@@ -1,6 +1,7 @@
 package lab3.lab3.service.user;
 
 import lab3.lab3.dto.UserDTO;
+import lab3.lab3.entity.User;
 import lab3.lab3.repository.UserRepo;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -25,16 +26,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void create(UserDTO userDTO) {
-
+        userRepo.save(modelMapper.map(userDTO, User.class));
     }
 
     @Override
     public void update(UserDTO userDTO, int id) {
-
+        userRepo.save(modelMapper.map(userDTO, User.class));
     }
 
     @Override
     public void delete(int id) {
-
+        userRepo.deleteById(id);
     }
 }
