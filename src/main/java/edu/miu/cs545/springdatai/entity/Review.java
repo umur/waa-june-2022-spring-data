@@ -19,4 +19,6 @@ public class Review {
 
     @ManyToOne
     private User userId;
+
+
 }

@@ -32,4 +32,24 @@ public class ProductController {
     public ProductDto deleteProduct(@PathVariable int id){
         return productService.deleteProduct(id);
     }
+
+    @GetMapping("/findProductByMinPrice/{minPrice}")
+    public List<ProductDto> findProductByMinPrice(@PathVariable int minPrice){
+        return productService.findProductByMinPrice(minPrice);
+    }
+
+    @GetMapping(value = "/findProductByCatAndPrice")
+    public List<ProductDto> findProductByCatAndPrice(@RequestParam int maxPrice,int id){
+        return productService.findProductByCatAndPrice(maxPrice,id);
+    }
+
+    @GetMapping("/findProductByName/{name}")
+    public List<ProductDto> findProductByName(@PathVariable String name){
+        return productService.findProductByName(name);
+    }
+
+    @GetMapping("/findProductByUserId/{userId}")
+    public List<ProductDto> findProductByUserId(@PathVariable int userId){
+        return productService.findProductByUserId(userId);
+    }
 }
