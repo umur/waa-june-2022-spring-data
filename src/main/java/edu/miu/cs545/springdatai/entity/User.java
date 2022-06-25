@@ -3,7 +3,6 @@ package edu.miu.cs545.springdatai.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class User {
     private String lastName;
     @Embedded
     private Address address;
-    @OneToMany(mappedBy = "userId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userId",cascade = CascadeType.ALL)
     private List<Review> reviews = new ArrayList<>();
 
     public void addReviews(Review review){
@@ -33,5 +32,4 @@ public class User {
         addedReview=review;
         reviews.add(addedReview);
     }
-
 }

@@ -7,4 +7,6 @@ public class ReviewDto {
     private Integer id;
     private String comment;
     private Integer userId;
+    private double rating;
+
 }

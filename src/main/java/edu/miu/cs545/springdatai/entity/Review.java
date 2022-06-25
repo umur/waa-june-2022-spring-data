@@ -16,11 +16,10 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String comment;
+    private double rating;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User userId;
 
-    @ManyToOne
-    private Product productId;
 
 }
