@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProductUtils {
-
+    static ModelMapper mapper;
     @Autowired
-    private static ModelMapper mapper;
+    public void setModelMapper(ModelMapper modelMapper){
+        ProductUtils.mapper=modelMapper;
+    }
 
     public static ProductDto parseProductToProductDto(Product product){
         return mapper.map(product, ProductDto.class);

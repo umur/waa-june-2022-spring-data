@@ -2,14 +2,19 @@ package edu.miu.cs545.springdatai.utils;
 
 import edu.miu.cs545.springdatai.dto.UserDto;
 import edu.miu.cs545.springdatai.entity.User;
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class UserUtils {
+    static ModelMapper mapper;
     @Autowired
-    private static ModelMapper mapper;
+    public void setModelMapper(ModelMapper modelMapper){
+        UserUtils.mapper=modelMapper;
+    }
 
     public static UserDto parseUserToUserDto(User user){
         return mapper.map(user, UserDto.class);
