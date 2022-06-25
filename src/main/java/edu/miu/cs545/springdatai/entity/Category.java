@@ -24,7 +24,5 @@ public class Category {
     }
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    //@JoinTable // OPTIONAL
-    @JsonManagedReference
     private List<Product> products;
 }

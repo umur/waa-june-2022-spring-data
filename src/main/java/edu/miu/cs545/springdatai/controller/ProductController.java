@@ -29,8 +29,8 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public ProductDto deleteProduct(@PathVariable int id){
-        return productService.deleteProduct(id);
+    public void deleteProduct(@PathVariable int id){
+        productService.deleteProduct(id);
     }
 
     @GetMapping("/findProductByMinPrice/{minPrice}")

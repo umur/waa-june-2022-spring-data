@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringDataIApplication {
 	@Bean
 	public ModelMapper modelMapper(){
+
 		return new ModelMapper();
 	}
 

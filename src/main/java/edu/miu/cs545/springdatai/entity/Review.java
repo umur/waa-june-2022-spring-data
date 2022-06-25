@@ -20,5 +20,7 @@ public class Review {
     @ManyToOne
     private User userId;
 
+    @ManyToOne
+    private Product productId;
 
 }

@@ -1,14 +1,16 @@
 package edu.miu.cs545.springdatai.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +21,16 @@ public class Product {
     double price;
     double rating;
 
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+
+    @ManyToOne
+    private Category category;
+
+    @OneToMany(mappedBy = "productId", fetch = FetchType.LAZY)
+    private List<Review> reviews;
+
     public Long getId() {
         return id;
     }
@@ -26,17 +38,4 @@ public class Product {
     public void setId(Long id) {
         this.id = id;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "id_user")
-    @JsonBackReference
-    private User user;
-
-    @ManyToOne
-    @JsonBackReference
-    private Category category;
-
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private List<Review> reviews;
 }

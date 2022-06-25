@@ -74,4 +74,24 @@ public class ProductServiceImpl implements ProductService {
         return productDtoList;
     }
 
+    @Override
+    public ProductDto createProduct(ProductDto productDto) {
+        return ProductUtils.parseProductToProductDto(productRepo.save(ProductUtils.parseProductDtoToProduct(productDto)));
+    }
+
+    @Override
+    public ProductDto updateProduct(int id, ProductDto productDto) {
+        return null;
+    }
+
+    @Override
+    public List<ProductDto> getAllProducts() {
+        return productRepo.findAll().stream().map(p-> ProductUtils.parseProductToProductDto(p)).toList();
+    }
+
+    @Override
+    public void deleteProduct(int id) {
+        productRepo.deleteById(id);
+    }
+
 }

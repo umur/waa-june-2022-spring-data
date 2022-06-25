@@ -1,4 +1,4 @@
-package edu.miu.cs545.springdatai.service.impl;
+package edu.miu.cs545.springdatai.service.implementation;
 
 import edu.miu.cs545.springdatai.dto.ReviewDto;
 import edu.miu.cs545.springdatai.dto.UserDto;
