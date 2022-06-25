@@ -1,7 +1,6 @@
-package edu.miu.cs545.springdatai.service;
+package edu.miu.cs545.joincolumn.service;
 
-import edu.miu.cs545.springdatai.dto.ReviewDto;
-import edu.miu.cs545.springdatai.dto.UserDto;
+import edu.miu.cs545.joincolumn.dto.UserDto;
 
 import java.util.List;
 

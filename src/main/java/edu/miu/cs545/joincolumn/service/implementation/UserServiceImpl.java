@@ -1,13 +1,9 @@
-package edu.miu.cs545.springdatai.service.implementation;
+package edu.miu.cs545.joincolumn.service.implementation;
 
-import edu.miu.cs545.springdatai.dto.ReviewDto;
-import edu.miu.cs545.springdatai.dto.UserDto;
-import edu.miu.cs545.springdatai.entity.Review;
-import edu.miu.cs545.springdatai.repo.UserRepository;
-import edu.miu.cs545.springdatai.service.UserService;
-import edu.miu.cs545.springdatai.utils.ReviewUtils;
-import edu.miu.cs545.springdatai.utils.UserUtils;
-import lombok.RequiredArgsConstructor;
+import edu.miu.cs545.joincolumn.dto.UserDto;
+import edu.miu.cs545.joincolumn.repo.UserRepository;
+import edu.miu.cs545.joincolumn.service.UserService;
+import edu.miu.cs545.joincolumn.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
