@@ -7,8 +7,9 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class DataIApplication {
+
     @Bean
-    public ModelMapper modelMapper(){
+    public ModelMapper modelMapper() {
         return new ModelMapper();
     }
 

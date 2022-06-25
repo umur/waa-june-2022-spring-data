@@ -25,27 +25,41 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDto> finalAllProductGreaterMinPrice(double minPrice) {
 
         List<ProductDto> products = new ArrayList<>();
+        var prod = productRepo.findAll();
 
-       for(Product product : productRepo.findAll()){
-         if(product.getPrice() > minPrice){
-             var dto = modelMapper.map(product,ProductDto.class);
-             products.add(dto);
-         }
-      }
-       return products;
+        for (Product product : prod) {
+            if (product.getPrice() > minPrice) {
+                var dto = modelMapper.map(product, ProductDto.class);
+                products.add(dto);
+            }
+        }
+        return products;
     }
 
     @Override
     public List<ProductDto> findByKeyWord(String keyWord) {
 
         List<ProductDto> productDtos = new ArrayList<>();
+        var prod = productRepo.findAll();
 
-       for(Product product: productRepo.findAll()){
-           if(product.getName().contains(keyWord)){
-               var dto = modelMapper.map(product,ProductDto.class);
-               productDtos.add(dto);
-           }
-       }
-       return productDtos;
+        for (Product product : prod) {
+            if (product.getName().contains(keyWord)) {
+                var dto = modelMapper.map(product, ProductDto.class);
+                productDtos.add(dto);
+            }
+        }
+        return productDtos;
+    }
+
+    @Override
+    public List<ProductDto> findAllCategories() {
+
+        List<ProductDto> productDtos = new ArrayList<>();
+        var prod = productRepo.findAll();
+
+        for(Product product: prod){
+            productDtos.add(modelMapper.map(product,ProductDto.class));
+        }
+        return productDtos;
     }
 }

@@ -13,19 +13,24 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Data
+@Table(name = "product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private  String name;
+    private String name;
     private double price;
     private int rating;
 
     @JsonManagedReference
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Category category;
-    @OneToMany
-    private List<Review> reviews;
+    @JsonManagedReference
+    @ManyToOne
+    private User user;
+
+//    @OneToMany//(mappedBy = "products")
+//    private List<Review> reviews;
 
 }

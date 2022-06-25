@@ -1,6 +1,7 @@
 package com.example.datai.service.impl;
 
 import com.example.datai.dto.ProductDto;
+import com.example.datai.dto.UserDto;
 import com.example.datai.entity.Product;
 import com.example.datai.entity.User;
 import com.example.datai.repository.UserRepo;
@@ -28,19 +29,30 @@ public class UserServiceImpl implements UserService {
     public List<ProductDto> findAllProductByCreatedByUser(long id) {
 
         List<ProductDto> productDtos = new ArrayList<>();
+        var dtos = userRepo.findAll();
 
-      for(User user: userRepo.findAll()){
-          if(user.getId() == id){
-              for(Product product: user.getProducts()) {
-                  var dto = modelMapper.map(product,ProductDto.class );
-                  productDtos.add(dto);
-              }
-          }
+        for (User user : dtos) {
+            if (user.getId() == id) {
+                for (Product product : user.getProducts()) {
+                    var dto = modelMapper.map(product, ProductDto.class);
+                    productDtos.add(dto);
+                }
+            }
         }
 
         return productDtos;
     }
 
+    @Override
+    public List<UserDto> findAllUsers() {
 
+        List<UserDto> userDtos = new ArrayList<>();
+        var data= userRepo.findAll();
+                for(User user: data){
+                    var u = modelMapper.map(user,UserDto.class);
+                    userDtos.add(u);
+                }
+                return userDtos;
+    }
 
 }

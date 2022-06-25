@@ -15,12 +15,16 @@ public class ProductController {
     @Autowired
     private ProductServiceImpl productService;
 
-    @GetMapping("/")
-    public List<ProductDto> finalAllProductGreaterMinPrice(@RequestParam double minPrice){
+    public List<ProductDto> findAllCategories(){
+        return productService.findAllCategories();
+    }
+    @GetMapping("/{minPrice}")
+    public List<ProductDto> findAllProductGreaterMinPrice(@RequestParam double minPrice) {
         return productService.finalAllProductGreaterMinPrice(minPrice);
     }
+
     @GetMapping(path = "/{keyword}")
-    public List<ProductDto> findByKeyWord(@PathVariable String keyWord){
+    public List<ProductDto> findByKeyWord(@PathVariable String keyWord) {
         return productService.findByKeyWord(keyWord);
     }
 }

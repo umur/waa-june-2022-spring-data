@@ -1,13 +1,10 @@
 package com.example.datai.entity;
 
 
-import com.example.datai.entity.Address;
-import com.example.datai.entity.Review;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Data
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     @Id
@@ -23,18 +20,19 @@ public class User {
     private Long id;
     private String email;
     private String password;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
 
-    @OneToMany //(fetch = FetchType.LAZY, mappedBy = "user") //----
-    @JsonManagedReference // ---
+    @JsonManagedReference
+    @OneToMany (mappedBy = "user")
     private List<Review> reviews;
-    @OneToMany
+
+    @OneToMany (mappedBy = "user")
     @JsonManagedReference
     private List<Product> products;
 
-    @JsonBackReference  //----
-    @OneToOne (mappedBy ="user")
+    @JsonBackReference
+    @OneToOne (mappedBy = "user")
     private Address address;
 
 

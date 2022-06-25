@@ -1,7 +1,10 @@
 package com.example.datai.controller;
 
 import com.example.datai.dto.ProductDto;
+import com.example.datai.dto.UserDto;
+import com.example.datai.entity.User;
 import com.example.datai.repository.UserRepo;
+import com.example.datai.service.UserService;
 import com.example.datai.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +19,15 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
-    @GetMapping(path = "{/id}")
-    public List<ProductDto> findAllProductCreatedByUser(@PathVariable("id") long id){
+    @GetMapping
+    public List<UserDto> getAllUsers(){
+        return userService.findAllUsers();
+    }
+
+    @GetMapping(path = "/{id}")
+    public List<ProductDto> findAllProductCreatedByUser(@PathVariable("id") long id) {
         return userService.findAllProductByCreatedByUser(id);
     }
 }

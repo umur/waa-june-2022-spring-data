@@ -12,15 +12,16 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Data
+@Table(name="category")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private  String name;
+    private String name;
 
     @JsonManagedReference
-    @OneToMany //(mappedBy = "category")
+    @OneToMany(mappedBy = "category")
     private List<Product> products;
 
 }

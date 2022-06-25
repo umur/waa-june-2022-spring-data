@@ -7,4 +7,6 @@ import java.util.List;
 public interface ReviewService {
 
     List<ReviewDto> findAllReviewOfProduct(long id);
+
+    List<ReviewDto> fiindAllReviews();
 }

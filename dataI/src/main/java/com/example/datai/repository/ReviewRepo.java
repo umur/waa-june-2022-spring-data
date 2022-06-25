@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ReviewRepo extends CrudRepository<Review,Long> {
+public interface ReviewRepo extends CrudRepository<Review, Long> {
 }

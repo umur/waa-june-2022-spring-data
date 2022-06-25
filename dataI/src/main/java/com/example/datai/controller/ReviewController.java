@@ -17,8 +17,13 @@ public class ReviewController {
     @Autowired
     private ReviewServiceImpl reviewService;
 
+    @GetMapping
+    public List<ReviewDto> findAllReviews(){
+        return reviewService.fiindAllReviews();
+    }
+
     @GetMapping(path = "/{id}")
-    public List<ReviewDto> findAllReviewOfProduct(@PathVariable long id){
-       return reviewService.findAllReviewOfProduct(id);
+    public List<ReviewDto> findAllReviewOfProduct(@PathVariable long id) {
+        return reviewService.findAllReviewOfProduct(id);
     }
 }
