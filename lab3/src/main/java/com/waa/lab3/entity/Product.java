@@ -23,4 +23,7 @@ public class Product {
     @ToString.Exclude
     private Category category;
 
+    @OneToOne
+    private User user;
+
 }

@@ -1,11 +1,10 @@
-package com.waa.lab3.repo;
+package com.waa.lab3.service;
 
 import com.waa.lab3.entity.Product;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductService {
 
     List<Product> findProductByPriceGreaterThan(Double minPrice);
 
@@ -14,4 +13,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findProductByNameContaining(String keyword);
 
     List<Product> findProductByUserId(Long userId);
+
 }
