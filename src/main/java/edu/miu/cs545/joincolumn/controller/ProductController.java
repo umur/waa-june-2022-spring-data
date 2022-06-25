@@ -1,18 +1,17 @@
-package edu.miu.cs545.springdatai.controller;
+package edu.miu.cs545.joincolumn.controller;
 
-import edu.miu.cs545.springdatai.dto.ProductDto;
-import edu.miu.cs545.springdatai.service.ProductService;
+import edu.miu.cs545.joincolumn.dto.ProductDto;
+import edu.miu.cs545.joincolumn.service.ProductService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/product")
 public class ProductController {
-    @Autowired
-    private ProductService productService;
+    private final ProductService productService;
 
     @PostMapping
     public ProductDto createProduct(@RequestBody ProductDto productDto){
@@ -40,7 +39,7 @@ public class ProductController {
     }
 
     @GetMapping(value = "/findProductByCatAndPrice")
-    public List<ProductDto> findProductByCatAndPrice(@RequestParam int maxPrice,int id){
+    public List<ProductDto> findProductByCatAndPrice(@RequestParam int maxPrice, int id){
         return productService.findProductByCatAndPrice(maxPrice,id);
     }
 

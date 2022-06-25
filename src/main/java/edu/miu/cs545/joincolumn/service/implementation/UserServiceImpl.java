@@ -1,23 +1,21 @@
-package edu.miu.cs545.springdatai.service.implementation;
+package edu.miu.cs545.joincolumn.service.implementation;
 
-import edu.miu.cs545.springdatai.dto.ReviewDto;
-import edu.miu.cs545.springdatai.dto.UserDto;
-import edu.miu.cs545.springdatai.entity.Review;
-import edu.miu.cs545.springdatai.repo.UserRepository;
-import edu.miu.cs545.springdatai.service.UserService;
-import edu.miu.cs545.springdatai.utils.ReviewUtils;
-import edu.miu.cs545.springdatai.utils.UserUtils;
+import edu.miu.cs545.joincolumn.dto.ReviewDto;
+import edu.miu.cs545.joincolumn.dto.UserDto;
+import edu.miu.cs545.joincolumn.entity.Review;
+import edu.miu.cs545.joincolumn.repo.UserRepository;
+import edu.miu.cs545.joincolumn.service.UserService;
+import edu.miu.cs545.joincolumn.utils.ReviewUtils;
+import edu.miu.cs545.joincolumn.utils.UserUtils;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserRepository userRepository;
-
+    private final UserRepository userRepository;
     @Override
     public UserDto createNewUser(UserDto userDto) {
         return UserUtils.parseUserToUserDto(userRepository.save(UserUtils.parseUserDtoToUser(userDto)));
@@ -25,7 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> getAllUsers() {
-        return userRepository.findAll().stream().map(u->UserUtils.parseUserToUserDto(u)).toList();
+        return userRepository.findAll().stream().map(u-> UserUtils.parseUserToUserDto(u)).toList();
     }
 
     @Override
@@ -50,6 +48,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createNewReview(int id, ReviewDto reviewDto) {
+        System.out.println(reviewDto);
         userRepository.findById(id).get().addReviews(ReviewUtils.parseReviewDtoToReview(reviewDto));
     }
 }
