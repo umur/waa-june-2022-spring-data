@@ -1,8 +1,8 @@
 package edu.miu.cs545.jointable.repo;
 
+import edu.miu.cs545.jointable.entity.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import edu.miu.cs545.jointable.entity.Category;
 
 import java.util.List;
 

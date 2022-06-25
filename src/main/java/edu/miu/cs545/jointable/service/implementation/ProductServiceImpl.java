@@ -1,10 +1,10 @@
 package edu.miu.cs545.jointable.service.implementation;
 
 import edu.miu.cs545.jointable.dto.ProductDto;
-import edu.miu.cs545.jointable.entity.Product;
 import edu.miu.cs545.jointable.repo.CategoryRepo;
 import edu.miu.cs545.jointable.repo.ProductRepo;
 import edu.miu.cs545.jointable.service.ProductService;
+import edu.miu.cs545.jointable.entity.Product;
 import edu.miu.cs545.jointable.utils.ProductUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

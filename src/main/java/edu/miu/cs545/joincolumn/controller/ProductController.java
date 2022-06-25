@@ -2,16 +2,16 @@ package edu.miu.cs545.joincolumn.controller;
 
 import edu.miu.cs545.joincolumn.dto.ProductDto;
 import edu.miu.cs545.joincolumn.service.ProductService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
 @RestController
 @RequestMapping("/product")
 public class ProductController {
-    private final ProductService productService;
+    @Autowired
+    private ProductService productService;
 
     @PostMapping
     public ProductDto createProduct(@RequestBody ProductDto productDto){

@@ -1,6 +1,6 @@
 package edu.miu.cs545.joincolumn.dto;
 
-import edu.miu.cs545.joincolumn.entity.Address;
+import edu.miu.cs545.springdatai.entity.Address;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -1,11 +1,8 @@
 package edu.miu.cs545.jointable.service.implementation;
 
-import edu.miu.cs545.jointable.dto.ReviewDto;
 import edu.miu.cs545.jointable.dto.UserDto;
-import edu.miu.cs545.jointable.entity.Review;
 import edu.miu.cs545.jointable.repo.UserRepository;
 import edu.miu.cs545.jointable.service.UserService;
-import edu.miu.cs545.jointable.utils.ReviewUtils;
 import edu.miu.cs545.jointable.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,11 +30,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Review> getById(int id) {
-        return userRepository.findById(id).get().getReviews();
-    }
-
-    @Override
     public UserDto updateUserById(Integer id, UserDto userDto) {
         return null;
     }
@@ -47,8 +39,4 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
-    @Override
-    public void createNewReview(int id, ReviewDto reviewDto) {
-        userRepository.findById(id).get().addReviews(ReviewUtils.parseReviewDtoToReview(reviewDto));
-    }
 }

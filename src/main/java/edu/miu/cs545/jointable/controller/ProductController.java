@@ -39,7 +39,7 @@ public class ProductController {
     }
 
     @GetMapping(value = "/findProductByCatAndPrice")
-    public List<ProductDto> findProductByCatAndPrice(@RequestParam int maxPrice,int id){
+    public List<ProductDto> findProductByCatAndPrice(@RequestParam int maxPrice, int id){
         return productService.findProductByCatAndPrice(maxPrice,id);
     }
 
