@@ -1,8 +1,8 @@
-package edu.miu.cs545.springdatai.controller;
+package edu.miu.cs545.joincolumn.controller;
 
-import edu.miu.cs545.springdatai.dto.ReviewDto;
-import edu.miu.cs545.springdatai.dto.UserDto;
-import edu.miu.cs545.springdatai.service.UserService;
+import edu.miu.cs545.joincolumn.dto.ReviewDto;
+import edu.miu.cs545.joincolumn.dto.UserDto;
+import edu.miu.cs545.joincolumn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

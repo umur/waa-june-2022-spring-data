@@ -1,11 +1,10 @@
-package edu.miu.cs545.springdatai.entity;
+package edu.miu.cs545.joincolumn.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data

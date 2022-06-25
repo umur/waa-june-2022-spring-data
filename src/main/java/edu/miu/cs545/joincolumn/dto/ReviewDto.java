@@ -1,4 +1,4 @@
-package edu.miu.cs545.springdatai.dto;
+package edu.miu.cs545.joincolumn.dto;
 
 import lombok.Data;
 

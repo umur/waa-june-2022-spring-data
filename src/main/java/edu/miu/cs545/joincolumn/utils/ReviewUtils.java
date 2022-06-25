@@ -1,7 +1,7 @@
-package edu.miu.cs545.springdatai.utils;
+package edu.miu.cs545.joincolumn.utils;
 
-import edu.miu.cs545.springdatai.dto.ReviewDto;
-import edu.miu.cs545.springdatai.entity.Review;
+import edu.miu.cs545.joincolumn.dto.ReviewDto;
+import edu.miu.cs545.joincolumn.entity.Review;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +16,6 @@ public class ReviewUtils {
     }
 
     public static Review parseReviewDtoToReview(ReviewDto reviewDto){
-        return mapper.map(reviewDto,Review.class);
+        return mapper.map(reviewDto, Review.class);
     }
 }

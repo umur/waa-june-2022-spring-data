@@ -1,24 +1,22 @@
-package edu.miu.cs545.springdatai.service.implementation;
+package edu.miu.cs545.joincolumn.service.implementation;
 
-import edu.miu.cs545.springdatai.dto.ProductDto;
-import edu.miu.cs545.springdatai.entity.Product;
-import edu.miu.cs545.springdatai.repo.CategoryRepo;
-import edu.miu.cs545.springdatai.repo.ProductRepo;
-import edu.miu.cs545.springdatai.service.ProductService;
-import edu.miu.cs545.springdatai.utils.ProductUtils;
+import edu.miu.cs545.joincolumn.dto.ProductDto;
+import edu.miu.cs545.joincolumn.entity.Product;
+import edu.miu.cs545.joincolumn.repo.CategoryRepo;
+import edu.miu.cs545.joincolumn.repo.ProductRepo;
+import edu.miu.cs545.joincolumn.service.ProductService;
+import edu.miu.cs545.joincolumn.utils.ProductUtils;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ProductServiceImpl implements ProductService {
-    @Autowired
-    private ProductRepo productRepo;
-    @Autowired
-    private CategoryRepo categoryRepo;
+    private final ProductRepo productRepo;
+    private final CategoryRepo categoryRepo;
 
 
     @Override

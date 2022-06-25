@@ -1,4 +1,4 @@
-package edu.miu.cs545.springdatai.entity;
+package edu.miu.cs545.joincolumn.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,6 @@ import java.util.List;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
     @Column(name="product_name")
     private String name;
@@ -29,5 +28,6 @@ public class Product {
     private Category category;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn
     private List<Review> reviews;
 }

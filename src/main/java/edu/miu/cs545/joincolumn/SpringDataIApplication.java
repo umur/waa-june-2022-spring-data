@@ -1,4 +1,4 @@
-package edu.miu.cs545.springdatai;
+package edu.miu.cs545.joincolumn;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

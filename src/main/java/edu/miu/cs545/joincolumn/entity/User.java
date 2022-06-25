@@ -1,4 +1,4 @@
-package edu.miu.cs545.springdatai.entity;
+package edu.miu.cs545.joincolumn.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +23,8 @@ public class User {
     private String lastName;
     @Embedded
     private Address address;
-    @OneToMany(mappedBy = "userId",cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn
     private List<Review> reviews;
 
     public void addReviews(Review review){

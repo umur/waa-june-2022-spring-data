@@ -1,7 +1,7 @@
-package edu.miu.cs545.springdatai.utils;
+package edu.miu.cs545.joincolumn.utils;
 
-import edu.miu.cs545.springdatai.dto.UserDto;
-import edu.miu.cs545.springdatai.entity.User;
+import edu.miu.cs545.joincolumn.dto.UserDto;
+import edu.miu.cs545.joincolumn.entity.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +16,6 @@ public class UserUtils {
     }
 
     public static User parseUserDtoToUser(UserDto userDto){
-        return mapper.map(userDto,User.class);
+        return mapper.map(userDto, User.class);
     }
 }
