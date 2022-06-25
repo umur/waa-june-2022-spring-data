@@ -14,7 +14,7 @@ public class AddressBi {
     private String street;
     private String zip;
     private String city;
-    @OneToOne
+    @OneToOne(mappedBy = "addressBi")
     UserBi userBi;
 
 }
