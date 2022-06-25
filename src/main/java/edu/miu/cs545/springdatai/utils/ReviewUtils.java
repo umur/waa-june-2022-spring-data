@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ReviewUtils {
+    static ModelMapper mapper;
     @Autowired
-    private static ModelMapper mapper;
+    public void setModelMapper(ModelMapper modelMapper){
+        ReviewUtils.mapper=modelMapper;
+    }
 
     public static ReviewDto parseReviewToReviewDto(Review review){
         return mapper.map(review, ReviewDto.class);
