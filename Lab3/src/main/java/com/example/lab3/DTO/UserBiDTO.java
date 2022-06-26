@@ -2,9 +2,11 @@ package com.example.lab3.DTO;
 
 import com.example.lab3.model.bidirectional.AddressBi;
 import com.example.lab3.model.bidirectional.ReviewBi;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 public class UserBiDTO {
     private long id;
     private String email;
