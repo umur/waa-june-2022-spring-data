@@ -1,5 +1,6 @@
 package edu.miu.productreview.controller;
 
+import edu.miu.productreview.model.Category;
 import edu.miu.productreview.model.Product;
 import edu.miu.productreview.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,34 +10,44 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/product")
 public class ProductController {
     @Autowired
     private IProductService productService;
 
     @GetMapping
-    public List<Product> getAllUser(){
-        return productService.getAllProducts();
+    public List<Product> getAllProduct() {
+        return productService.getAllProduct();
     }
 
     @GetMapping("/{id}")
-    public Optional<Product> getProductById(@PathVariable int id){
+    public Optional<Product> getProductById(@PathVariable int id) {
         return productService.getProductById(id);
     }
 
     @PostMapping
-    public Product createProduct( @RequestBody Product product){
-            return productService.createProduct(product);
+    public Product createProduct( @RequestBody Product review) {
+        return productService.createProduct(review);
     }
 
     @PutMapping
-    public Product updateProduct(@RequestBody  Product product){
-        return productService.updateProduct(product);
+    public Product updateProduct(@RequestBody Product review) {
+        return productService.updateProduct(review);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteByID( @PathVariable int id){
+    public void deleteProductById(@PathVariable int id) {
         productService.deleteProductById(id);
+    }
+
+    @GetMapping("/name/{name}")
+    public List<Product> getAllProduct(@PathVariable String name) {
+        return productService.getProductByNameContains(name);
+    }
+
+    @GetMapping("/category/{category}")
+    public List<Product> getProductByCategory(@PathVariable Category category) {
+        return productService.getProductByCategory(category);
     }
 
 }

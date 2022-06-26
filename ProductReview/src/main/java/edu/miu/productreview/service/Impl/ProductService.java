@@ -1,5 +1,6 @@
 package edu.miu.productreview.service.Impl;
 
+import edu.miu.productreview.model.Category;
 import edu.miu.productreview.model.Product;
 import edu.miu.productreview.repository.IProductRepository;
 import edu.miu.productreview.service.IProductService;
@@ -15,7 +16,7 @@ public class ProductService implements IProductService {
     IProductRepository productRepository;
 
     @Override
-    public List<Product> getAllProducts() {
+    public List<Product> getAllProduct() {
         return (List<Product>) productRepository.findAll();
     }
 
@@ -39,8 +40,18 @@ public class ProductService implements IProductService {
         productRepository.deleteById(id);
     }
 
+//    @Override
+//    public Product findProductByName(String name) {
+//        return productRepository.findProductByName(name);
+//    }
+
     @Override
-    public void deleteAllProdut() {
-        productRepository.deleteAll();
+    public List<Product> getProductByNameContains(String name) {
+        return (List<Product>) productRepository.getProductByNameContains(name);
+    }
+
+    @Override
+    public List<Product> getProductByCategory(Category category) {
+        return (List<Product>) productRepository.getProductByCategory(category);
     }
 }

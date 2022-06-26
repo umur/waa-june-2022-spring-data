@@ -14,7 +14,7 @@ public class Category {
     private String name;
 
 //    @OneToMany
-    @OneToMany(mappedBy = "category") // Bi directional
+    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL) // Bi directional
 //    @JoinColumn(name = "category_id")
     private List<Product> products;
 }

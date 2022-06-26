@@ -18,8 +18,7 @@ public class Users {
     private String firstName;
     private String lastName;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private List<Review> reviews;
 //
 //    // Join Table
@@ -27,6 +26,6 @@ public class Users {
 //    @JoinTable
 //    private List<Review> reviews;
 
-    @OneToOne(mappedBy = "users")
-    private Address address;
+//    @OneToOne(mappedBy = "users")
+//    private Address address;
 }

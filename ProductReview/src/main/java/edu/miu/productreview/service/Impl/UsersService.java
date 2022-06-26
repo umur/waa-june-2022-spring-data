@@ -27,6 +27,7 @@ public class UsersService implements IUsersService {
 
     @Override
     public Users createUser(Users users) {
+
         return usersRepository.save(users);
     }
 
@@ -40,8 +41,4 @@ public class UsersService implements IUsersService {
         usersRepository.deleteById(id);
     }
 
-    @Override
-    public void deleteAllUsers() {
-        usersRepository.deleteAll();
-    }
 }
