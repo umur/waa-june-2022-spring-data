@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class ReviewDTO {
     private int id;
     private String comment;
-    private AppUser appUser;
+    private AppUserDTO appUser;
 }

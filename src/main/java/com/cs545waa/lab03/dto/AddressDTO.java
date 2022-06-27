@@ -12,5 +12,5 @@ public class AddressDTO {
     private String city;
     private String state;
     private String zip;
-    private AppUser appUser;
+    private AppUserDTO appUser;
 }

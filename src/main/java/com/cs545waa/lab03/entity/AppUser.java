@@ -1,5 +1,6 @@
 package com.cs545waa.lab03.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
@@ -18,16 +19,16 @@ public class AppUser {
     private String password;
 
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToOne(mappedBy = "appUser", fetch = FetchType.LAZY)
     private Address address;
 
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToMany(mappedBy = "appUser", fetch = FetchType.LAZY)
     private List<Review> reviews;
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToMany(mappedBy = "appUser", fetch = FetchType.LAZY)
     private List<Product> products;
 }

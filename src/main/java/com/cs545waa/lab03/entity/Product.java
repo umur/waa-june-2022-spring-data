@@ -1,6 +1,7 @@
 package com.cs545waa.lab03.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,13 +19,15 @@ public class Product {
     private double price;
     private int rating;
 
+    @JsonManagedReference
     @OneToOne(cascade = CascadeType.PERSIST)
     private Category category;
 
-    @JsonBackReference
+    @JsonManagedReference
     @ManyToOne
     private AppUser appUser;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "product")
     private List<Review> reviews;
 }

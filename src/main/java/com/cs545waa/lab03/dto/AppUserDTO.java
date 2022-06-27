@@ -15,6 +15,6 @@ public class AppUserDTO {
     private String lastName;
     private String email;
     private String password;
-    private Address address;
-    private List<Review> reviews;
+    private AddressDTO address;
+    private List<ReviewDTO> reviews;
 }

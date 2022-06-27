@@ -1,5 +1,6 @@
 package com.cs545waa.lab03.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
@@ -15,7 +16,7 @@ public class Category {
 
     private String name;
 
-    @JsonManagedReference
+    @JsonBackReference
     @OneToMany(fetch = FetchType.LAZY)
     private List<Product> products;
 }

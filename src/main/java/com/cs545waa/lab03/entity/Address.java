@@ -1,6 +1,7 @@
 package com.cs545waa.lab03.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,7 +18,7 @@ public class Address {
     private String state;
     private String zip;
 
-    @JsonBackReference
+    @JsonManagedReference
     @OneToOne
     private AppUser appUser;
 }
