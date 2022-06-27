@@ -7,5 +7,5 @@ import java.time.LocalDate;
 public class ActivityLogDto {
     private LocalDate date;
     private String operation;
-    private String duration;
+    private long duration;
 }

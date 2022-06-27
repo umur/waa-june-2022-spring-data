@@ -1,5 +1,6 @@
 package com.example.lab3.controller;
 
+import com.example.lab3.DTO.UserBiDTO;
 import com.example.lab3.model.bidirectional.UserBi;
 import com.example.lab3.service.UserBiService;
 import lombok.AllArgsConstructor;
@@ -25,13 +26,18 @@ public class UserBiController {
     }
 
     @GetMapping("/{id}")
-    public UserBi getById(@PathVariable long id){
-       return userBiService.getById(id);
+    public UserBi getById(@PathVariable long id) {
+        return userBiService.getById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void remove(@PathVariable long id){
+    public void remove(@PathVariable long id) {
         userBiService.delete(id);
+    }
+
+    @GetMapping("/search")
+    public List<UserBiDTO> getByAge(@RequestParam int age) {
+        return null;
     }
 
 

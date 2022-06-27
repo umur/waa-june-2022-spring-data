@@ -1,8 +1,8 @@
 package com.example.lab3.service;
 
-import com.example.lab3.model.bidirectional.CategoryBi;
 import com.example.lab3.model.bidirectional.UserBi;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface UserBiService {
@@ -14,4 +14,5 @@ public interface UserBiService {
 
     List<UserBi> getAll();
 
+   
 }

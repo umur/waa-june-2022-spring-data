@@ -16,5 +16,5 @@ public class ActivityLog {
     private long id;
     private LocalDate date;
     private String operation;
-    private String duration;
+    private long duration;
 }
